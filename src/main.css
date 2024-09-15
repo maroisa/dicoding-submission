@@ -1,0 +1,80 @@
+:root {
+    --hitam: rgb(42, 43, 54);
+    --putih: rgb(207, 240, 255);
+    --pink: rgb(255, 142, 208);
+    --kuning: rgb(255, 247, 172);
+    
+    background-color: var(--hitam);
+    color: var(--putih);
+    font-family: 'SUSE';
+}
+
+@font-face {
+    font-family: "SUSE";
+    src: url("/SUSE.ttf");
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    max-width: 1280px;
+}
+
+.daftar-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.item-container {
+    padding: 1rem;
+    background-color: rgb(52, 53, 66);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item-btn-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.item-btn {
+    margin-top: 0.5rem;
+    flex-grow: 1;
+    background-color: var(--hitam);
+    color: var(--putih);
+    padding: 1rem 1rem;
+    border: none;
+}
+
+.item-btn-kiri { 
+    border-radius: 0.5rem 0 0 0.5rem; 
+    color: var(--pink);
+    border: 1px solid var(--pink);
+}
+
+.item-btn-kanan { 
+    border-radius: 0 0.5rem 0.5rem 0; 
+    color: var(--kuning);
+    border: 1px solid var(--kuning);
+}
+
+.item-btn:active { opacity: 0.5; }
+
+@media (max-width: 800px) {
+    .daftar-container {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
