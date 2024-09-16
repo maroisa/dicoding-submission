@@ -3,11 +3,22 @@ import DaftarKecilCatatan from './DaftarKecilCatatan.jsx'
 import styles from '../styles/Daftar.module.css'
 
 import { filterCatatan } from '../utils/index.js'
+import { useState } from 'react'
 
 function DaftarCatatan({daftarCatatan, hapusCatatan, arsipCatatan}){
-    const {daftarCatatanAktif, daftarCatatanArsip} = filterCatatan(daftarCatatan)
+    const [judulDicari, setJudulDicari] = useState('')
+
+    const {daftarCatatanAktif, daftarCatatanArsip} = filterCatatan(daftarCatatan, judulDicari)
+    
 
     return <div className={styles.container}>
+        <input 
+            value={judulDicari}
+            onChange={(event) => setJudulDicari(event.target.value)}
+            type="text" 
+            placeholder="Cari" 
+            className={styles.input} />
+        
         <DaftarKecilCatatan 
             title="Catatan Aktif" 
             daftarCatatan={daftarCatatanAktif} 
@@ -15,7 +26,7 @@ function DaftarCatatan({daftarCatatan, hapusCatatan, arsipCatatan}){
             arsipCatatan={arsipCatatan} />
         
         <DaftarKecilCatatan 
-            title="Catatan Arsip" 
+            title="Arsip" 
             daftarCatatan={daftarCatatanArsip} 
             hapusCatatan={hapusCatatan}
             arsipCatatan={arsipCatatan} />

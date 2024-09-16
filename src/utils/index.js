@@ -53,7 +53,7 @@ const showFormattedDate = (date) => {
   return new Date(date).toLocaleDateString("id-ID", options)
 }
 
-const filterCatatan = (daftarCatatan) => {
+const filterCatatan = (daftarCatatan, judulDicari) => {
   var daftarCatatanAktif = []
   var daftarCatatanArsip = []
   
@@ -62,10 +62,21 @@ const filterCatatan = (daftarCatatan) => {
     else daftarCatatanAktif.push(catatan)
   })
 
+  if (judulDicari.length > 0) {
+    daftarCatatanAktif = cariJudul(daftarCatatanAktif, judulDicari)
+    daftarCatatanArsip = cariJudul(daftarCatatanArsip, judulDicari)
+  }
+
   return {
     daftarCatatanAktif,
     daftarCatatanArsip
   }
+}
+
+const cariJudul = (daftarCatatan, judul) => {
+  return daftarCatatan.filter(catatan => {
+    return catatan.title.toLowerCase().includes(judul)
+  })
 }
 
 export { getInitialData, showFormattedDate, filterCatatan };

@@ -38,6 +38,8 @@
 }
 
 .inputLabel {
+    text-align: center;
+    min-width: 20px;
     font-weight: 200;
     border-radius: 0 1rem 1rem 0;
 }
