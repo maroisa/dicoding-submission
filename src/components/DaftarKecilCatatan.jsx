@@ -3,10 +3,13 @@ import ItemCatatan from './ItemCatatan.jsx'
 import styles from '../styles/Daftar.module.css'
 
 function DaftarKecilCatatan({title, daftarCatatan, hapusCatatan, arsipCatatan}){
-    if (daftarCatatan.length == 0) return null
 
     return <div className={styles.container}>
         <h2>{title}</h2>
+        {daftarCatatan.length == 0 
+        ? <p style={{fontWeight: 200}}>Tidak ada Catatan</p> 
+        : null}
+        
         <div className={styles.grid}>
             {
                 daftarCatatan.map(catatan => {

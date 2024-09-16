@@ -75,7 +75,7 @@ const filterCatatan = (daftarCatatan, judulDicari) => {
 
 const cariJudul = (daftarCatatan, judul) => {
   return daftarCatatan.filter(catatan => {
-    return catatan.title.toLowerCase().includes(judul)
+    return catatan.title.toLowerCase().includes(judul.toLowerCase())
   })
 }
 
