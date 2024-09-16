@@ -1,13 +1,16 @@
-import ItemCatatan from './ItemCatatan.jsx'
+import DaftarKecilCatatan from './DaftarKecilCatatan.jsx'
+
+import styles from '../styles/Daftar.module.css'
+import { filterCatatan } from '../utils/index.js'
 
 function DaftarCatatan({daftarCatatan}){
-    return <div className="daftar-container">
-        {
-            daftarCatatan.map(catatan => 
-                <ItemCatatan key={catatan.id} catatan={catatan} />
-            )
-        }
+    const {daftarCatatanAktif, daftarCatatanArsip} = filterCatatan(daftarCatatan)
+
+    return <div className={styles.container}>
+        <DaftarKecilCatatan title="Catatan Aktif" daftarCatatan={daftarCatatanAktif} />
+        <DaftarKecilCatatan title="Catatan Arsip" daftarCatatan={daftarCatatanArsip} />
     </div>
 }
+
 
 export default DaftarCatatan

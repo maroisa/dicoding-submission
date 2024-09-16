@@ -1,10 +1,19 @@
+import styles from '../styles/Item.module.css'
+
 function ItemCatatan({catatan}){
-    return <div className="item-container">
+
+    return <div className={styles.container}>
         <h3>{catatan.title}</h3>
         <p>{catatan.body}</p>
-        <div className="item-btn-container">
-            <button className="item-btn item-btn-kiri">Hapus</button>
-            <button className="item-btn item-btn-kanan">Arsipkan</button>
+        <div className={styles.btnContainer}>
+            <button className={`${styles.btn} ${styles.btnKiri}`}>Hapus</button>
+            <button className={`
+                ${styles.btn} 
+                ${styles.btnKanan}
+                ${catatan.archived ? styles.btnArsip : ''}
+            `}>
+                { catatan.archived ? 'Pulihkan' : 'Arsipkan' }
+            </button>
         </div>
     </div>
 }

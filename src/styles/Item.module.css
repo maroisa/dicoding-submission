@@ -1,0 +1,52 @@
+.container {
+    border: 1px solid var(--abu);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 2rem;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.btnContainer {
+    flex-grow: 1;
+    align-items: flex-end;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.btn {
+    flex-grow: 1;
+    padding: 1rem;
+    border: 1px solid var(--abu);
+}
+
+.btn:active {
+    opacity: 0.4;
+}
+
+.btnKiri {
+    border-color: var(--pink);
+    border-radius: 1rem 0 0 1rem;
+    color: var(--pink);
+}
+
+.btnKanan {
+    border-color: var(--kuning);
+    border-radius: 0 1rem 1rem 0;
+    color: var(--kuning);
+}
+
+.btnArsip {
+    border-color: var(--putih);
+    color: var(--putih);
+}

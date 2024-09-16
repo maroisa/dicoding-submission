@@ -11,14 +11,14 @@ const getInitialData = () => ([
     title: "Functional Component",
     body: "Functional component merupakan React component yang dibuat menggunakan fungsi JavaScript. Agar fungsi JavaScript dapat disebut component ia harus mengembalikan React element dan dipanggil layaknya React component.",
     createdAt: '2022-04-14T04:27:34.572Z',
-    archived: false,
+    archived: true,
   },
   {
     id: 3,
     title: "Modularization",
     body: "Dalam konteks pemrograman JavaScript, modularization merupakan teknik dalam memecah atau menggunakan kode dalam berkas JavaScript secara terpisah berdasarkan tanggung jawabnya masing-masing.",
     createdAt: '2022-04-14T04:27:34.572Z',
-    archived: false,
+    archived: true,
   },
   {
     id: 4,
@@ -53,4 +53,19 @@ const showFormattedDate = (date) => {
   return new Date(date).toLocaleDateString("id-ID", options)
 }
 
-export { getInitialData, showFormattedDate };
+const filterCatatan = (daftarCatatan) => {
+  var daftarCatatanAktif = []
+  var daftarCatatanArsip = []
+  
+  daftarCatatan.forEach(catatan => {
+    if (catatan.archived) daftarCatatanArsip.push(catatan)
+    else daftarCatatanAktif.push(catatan)
+  })
+
+  return {
+    daftarCatatanAktif,
+    daftarCatatanArsip
+  }
+}
+
+export { getInitialData, showFormattedDate, filterCatatan };
