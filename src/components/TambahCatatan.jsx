@@ -16,6 +16,8 @@ function TambahCatatan({tambahCatatan}){
     }
 
     function submitCatatan(){
+        if (catatanTitle.length == 0 || catatanBody.length == 0) return
+
         tambahCatatan(catatanTitle, catatanBody)
         setCatatanTitle('')
         setCatatanBody('')
@@ -24,13 +26,18 @@ function TambahCatatan({tambahCatatan}){
     return <div className={styles.container}>
         <div className={styles.center}>
             <h2>Tambah Catatan</h2>
-            <input
-                value={catatanTitle}
-                onChange={handleChange}
-                placeholder="Judul catatan..." 
-                className={`${styles.input} ${styles.inputOutline}`} 
-                name="title"
-                type="text" />
+            <div className={styles.inputGroup}>
+                <input
+                    value={catatanTitle}
+                    onChange={handleChange}
+                    placeholder="Judul catatan..." 
+                    className={`${styles.input} ${styles.inputOutline} ${styles.inputItem}`} 
+                    name="title"
+                    type="text" />
+                <span className={`${styles.input} ${styles.inputLabel}`}>
+                    {50 - catatanTitle.length}
+                </span>
+            </div>
             
             <textarea 
                 value={catatanBody}

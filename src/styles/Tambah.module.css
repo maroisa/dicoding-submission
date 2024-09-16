@@ -25,6 +25,23 @@
     border-radius: 0.5rem;
 }
 
+.inputGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inputItem {
+    border-radius: 1rem 0 0 1rem;
+    flex-grow: 1;
+    margin-right: 4px;
+}
+
+.inputLabel {
+    font-weight: 200;
+    border-radius: 0 1rem 1rem 0;
+}
+
 .inputOutline:focus {
     outline: 1px solid var(--putih);
 }
