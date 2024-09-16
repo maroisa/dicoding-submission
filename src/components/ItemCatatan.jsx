@@ -18,7 +18,7 @@ function ItemCatatan({catatan, hapusCatatan, arsipCatatan}){
                     ${styles.btn} 
                     ${styles.btnKanan}
                     ${catatan.archived ? styles.btnArsip : ''} `}>
-                { catatan.archived ? 'Pulihkan' : 'Arsipkan' }
+                { catatan.archived ? 'Pindahkan' : 'Arsipkan' }
             </button>
         </div>
     </div>

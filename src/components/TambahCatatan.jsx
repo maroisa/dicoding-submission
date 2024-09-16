@@ -8,7 +8,10 @@ function TambahCatatan({tambahCatatan}){
     function handleChange(event){
         const {name, value} = event.target
 
-        if (name == 'title') setCatatanTitle(value)
+        if (name == 'title') {
+            if (value.length > 50) return
+            setCatatanTitle(value)
+        }
         if (name == 'body') setCatatanBody(value)
     }
 

@@ -1,6 +1,7 @@
 import DaftarKecilCatatan from './DaftarKecilCatatan.jsx'
 
 import styles from '../styles/Daftar.module.css'
+
 import { filterCatatan } from '../utils/index.js'
 
 function DaftarCatatan({daftarCatatan, hapusCatatan, arsipCatatan}){
