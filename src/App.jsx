@@ -26,9 +26,25 @@ export default function App(){
         ])
     }
 
+    function hapusCatatan(id){
+        const daftarBaru = daftarCatatan.filter(catatan => catatan.id != id)
+        setDaftarCatatan(daftarBaru)
+    }
+
+    function arsipCatatan(id){
+        const daftarBaru = daftarCatatan.map(catatan => {
+            if (catatan.id == id) catatan.archived = !catatan.archived
+            return catatan
+        })
+        setDaftarCatatan(daftarBaru)
+    }
+
     return <div className={styles.container}>
         <h1>Daftar Catatan</h1>
         <TambahCatatan tambahCatatan={tambahCatatan} />
-        <DaftarCatatan daftarCatatan={daftarCatatan} />
+        <DaftarCatatan 
+            daftarCatatan={daftarCatatan} 
+            hapusCatatan={hapusCatatan} 
+            arsipCatatan={arsipCatatan} />
     </div>
 }
