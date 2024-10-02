@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "SUSE";
+    src: url("./SUSE.ttf");
+}
+
+body {
+    margin: 0;
+    font-family: "SUSE";
+    font-size: larger;
+    line-height: 2rem;
+}
+
+main {
+    padding: 0 25vw;
+}
+
+
+img {
+    height: 200px;
+}
+
+.nav-container {
+    position: sticky;
+    top: 0;
+    background-color: rgb(163, 82, 35);
+    padding: 1rem 0;
+}
+
+.nav-flex {
+    margin: 0;
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.nav-item:active {
+    border-radius: 1rem;
+    background-color: rgb(131, 77, 32);
+}
+
+.aside-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.aside-flex > aside {
+    border: 2px solid wheat;
+    background-color: antiquewhite;
+    color: rgb(131, 77, 32);
+    padding: 0 1rem;
+    margin: 1rem;
+}
+
+footer {
+    background-color: rgb(163, 82, 35);
+    padding: 0.5rem 2rem;
+}
+
+footer > p {
+    margin: 0;
+    color: white;
+}
+
+footer > p > a {
+    color: rgb(203, 221, 255);
+}
+
+
+@media screen and (max-width: 800px) {
+    main {
+        padding: 1rem;
+    }
+    .aside-flex {
+        flex-direction: column;
+    }
+}
