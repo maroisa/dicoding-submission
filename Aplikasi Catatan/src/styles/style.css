@@ -1,0 +1,140 @@
+:root {
+  --background: rgb(59, 59, 73);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --yellow: rgb(255, 247, 172);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: rgb(40, 40, 51);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+}
+
+header h1 a, header a {
+  text-decoration: none;
+}
+
+header h1 {
+  flex: 1;
+}
+
+main {
+  margin: auto;
+  width: 1200px;
+  padding: 1rem 0;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.note-item {
+  text-decoration: none;
+  background-color: var(--background);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.note-item.new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.note-item-date {
+  margin: 0.5rem 0;
+  color: lightgrey;
+}
+
+.note-title {
+  margin-top: 2rem;
+  font-size: 48px;
+}
+
+.note-body {
+  margin: 1rem 0;
+  min-height: 200px;
+  font-size: larger;
+}
+
+.note-date {
+  color: lightgrey;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-size: large;
+}
+
+.border {
+  border: 1px solid var(--background);
+}
+
+
+.bottom-container {
+  position: absolute;
+  bottom: 2rem;
+  width: 1200px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.bottom-container > * {
+  flex-basis: 240px;
+  padding: 1rem;
+  background-color: var(--background);
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.bottom-container > *:active {
+  border-color: grey;
+  color: grey;
+}
+
+.archive-btn {
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: yellow;
+  border-color: yellow;
+}
+
+.active-btn {
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: lightblue;
+  border-color: lightblue;
+}
+
+.trash-btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: pink;
+  border-color: pink;
+}
+
+.empty {
+  margin-top: 2rem;
+  text-align: center;
+}
